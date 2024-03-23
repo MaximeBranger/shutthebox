@@ -1,0 +1,199 @@
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Amarante';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/amarante-v28-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  height: 100dvh;
+  padding-block-start: 5rem;
+}
+
+#playarea {
+  width: 80vw;
+  height: 30rem;
+  border: 5px solid #966F33;
+  border-radius: .3rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: #C1AD9E;
+  color: black;
+  border: none;
+  height: 5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Amarante', cursive;
+}
+
+button:hover {
+  background-color: #96867b;
+}
+
+#numbers {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #966F33;
+}
+
+.number {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-color: #C1AD9E;
+  border: 1px solid #966F33;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+
+  cursor: default;
+}
+
+.number.open {
+  background-color: #201D1B;
+  color: white;
+  align-items: self-start;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.number.last-closed {
+  background-color: #ca6d2f;
+
+  cursor: pointer;
+}
+
+#dices {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dice {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: .2rem;
+  display: flex;
+  padding: .4rem;
+  box-shadow: black .2rem .2rem 1rem;
+}
+
+.dot {
+  background-color: black;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  position: relative; 
+  box-shadow: grey 1px 1px 1px;
+}
+
+.dice_1 {
+  justify-content: center;
+  align-items: center;
+}
+
+.dice_2 {
+  justify-content : space-between;
+}
+
+.dice_2 .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.dice_3 {
+  justify-content: space-between;
+}
+
+.dice_3 .dot:nth-of-type(3) {
+  align-self :flex-end;
+}
+
+.dice_3 .dot:nth-of-type(2) {
+  align-self :center;
+}
+
+.dice_4 {
+  display: grid;
+  grid-template-columns: 50% 50%;  
+}
+
+.dice_4 .dot:nth-of-type(1),.dice_5 .dot:nth-of-type(1) {
+  align-self :flex-start;
+  justify-self: start;
+}
+
+.dice_4 .dot:nth-of-type(2),.dice_5 .dot:nth-of-type(2) {
+  align-self :flex-start;
+  justify-self: end;
+}
+
+.dice_4 .dot:nth-of-type(3),.dice_5 .dot:nth-of-type(3) {
+  align-self :flex-end;
+  justify-self: start;
+}
+
+.dice_4 .dot:nth-of-type(4),.dice_5 .dot:nth-of-type(4) {
+  align-self :flex-end;
+  justify-self: end;
+}
+
+.dice_5 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+}
+
+.dice_5::after {
+  content: ' ';
+  position: absolute;
+  background-color: black;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  left: 50%;
+  top: 50%;
+  margin-top: -.5rem;
+  margin-left: -.5rem;
+}
+
+.dice_6 {
+  display: grid;
+  grid-template-columns: 50% 50%;  
+}
+
+.dice_6 .dot:nth-of-type(even) {
+  justify-self: self-end;
+}
+
+.dice_6 .dot:nth-of-type(odd) {
+  justify-self: self-start;
+}
+
+.dice_6 .dot:nth-of-type(1), .dice_6 .dot:nth-of-type(2) {
+  align-self: flex-start;
+}
+
+.dice_6 .dot:nth-of-type(3), .dice_6 .dot:nth-of-type(4) {
+  align-self: center;
+}
+
+.dice_6 .dot:nth-of-type(5), .dice_6 .dot:nth-of-type(6) {
+  align-self: flex-end;
+}
